@@ -1,10 +1,10 @@
 const levels = [
-    'Разминка',
-    'Воробьиные',
-    'Лесные птицы',
-    'Певчие птицы',
-    'Хищные птицы',
-    'Морские птицы',
+    { marked: true, name: 'Разминка' },
+    { marked: false, name: 'Воробьиные' },
+    { marked: false, name: 'Лесные птицы' },
+    { marked: false, name: 'Певчие птицы' },
+    { marked: false, name: 'Хищные птицы' },
+    { marked: false, name: 'Морские птицы' },
 ];
 
 export default levels;

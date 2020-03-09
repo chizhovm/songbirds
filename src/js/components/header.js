@@ -1,40 +1,44 @@
-/* eslint-disable no-shadow */
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import PageItem from './page-item';
-import levels from '../../data/data';
 
-class Header extends Component {
-  constructor() {
-    super();
+const Header = (props) => {
 
-    this.state = {
-      levels,
-      value: 0,
-    };
-  }
+  const { value, levels, levelsHandler } = props;
 
-  render() {
-    const { value } = this.state;
-    const { levels } = this.state;
-
-    return (
-      <div className="header d-flex">
-        <div className="top-panel d-flex">
-          <div className="logo" />
-          <h5>
-            Score:
-            {' '}
-            <span className="score">{value}</span>
-          </h5>
-        </div>
-        <ul className="pagination">
-          {levels.map((level, index) => {
-          return (<PageItem level={level} key={level} index={index} />);
-          })}
-        </ul>
+  return (
+    <div className="header d-flex">
+      <div className="top-panel d-flex">
+        <div className="logo" />
+        <h5>
+          Score:
+          {' '}
+          <span className="score">{value}</span>
+        </h5>
       </div>
-    );
-  }
-}
+      <ul className="pagination">
+        {levels.map((level) => {
+          return (
+            <PageItem
+              level={level}
+              key={level.name}
+              levelsHandler={() => levelsHandler(level.name)}
+            />
+            );
+          })}
+      </ul>
+    </div>
+  );
+};
+
+Header.propTypes = {
+  levels: PropTypes.arrayOf(PropTypes.object).isRequired,
+  levelsHandler: PropTypes.func.isRequired,
+  value: PropTypes.number,
+};
+
+Header.defaultProps = {
+  value: 0,
+};
 
 export default Header;

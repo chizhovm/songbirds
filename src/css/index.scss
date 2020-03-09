@@ -1,3 +1,8 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -25,9 +30,31 @@ h5, .h5 {
   font-size: 1.171875rem;
 }
 
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 ol, ul, dl {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+a {
+  color: #00bc8c;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
 }
 
 .d-flex {
@@ -89,12 +116,6 @@ ol, ul, dl {
   text-align: center;
 }
 
-a {
-  color: #00bc8c;
-  text-decoration: none;
-  background-color: transparent;
-}
-
 .page-link {
   position: relative;
   display: block;
@@ -134,6 +155,116 @@ a {
   border-color: #007c5d;
 }
 
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #303030;
+  border-radius: 0.3rem;
+}
+
+.game-over {
+  display: none; // Game Over!!! 
+}
+
+.display-3 {
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.lead {
+  font-size: 1.171875rem;
+  font-weight: 300;
+}
+
+.mb-4, .my-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mt-4, .my-4 {
+  margin-top: 1.5rem !important;
+}
+
+.btn {
+  width: 100%;
+  margin: 25px 15px;
+  background-color: #303030;
+  border: 1px solid #444;
+  color: #fff!important;
+  cursor: auto;
+  -webkit-transition: .3s;
+  transition: .3s;
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+button, [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, input {
+  overflow: visible;
+}
+
+input, button, select, optgroup, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  border-radius: 0;
+}
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+  cursor: pointer;
+}
+
+.btn-game-over {
+  width: 100%;
+  padding: 15px;
+  margin: 25px 0;
+}
+
+.btn-next {
+  background-color: #00bc8c;
+  cursor: pointer;
+}
+
+.btn, .btn:focus {
+  box-shadow: none;
+}
+
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1140px;
@@ -155,5 +286,9 @@ a {
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
+  }
+
+  .jumbotron {
+    padding: 4rem 2rem;
   }
 }
