@@ -242,6 +242,7 @@ module.exports = {
             "single"
         ],
         "radix": "error",
+        "react/jsx-filename-extension": "off",
         "require-await": "error",
         "require-jsdoc": "error",
         "require-unicode-regexp": "error",
