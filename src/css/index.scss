@@ -26,6 +26,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   line-height: 1.2;
 }
 
+h3, .h3 {
+  font-size: 2rem;
+}
+
 h5, .h5 {
   font-size: 1.171875rem;
 }
@@ -57,6 +61,11 @@ hr {
   overflow: visible;
 }
 
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
 .d-flex {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -65,6 +74,7 @@ hr {
 
 .container {
   width: 100%;
+  min-width: 320px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -265,6 +275,81 @@ button:not(:disabled),
   box-shadow: none;
 }
 
+.random-bird {
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 25px;
+  div {
+    width: calc(100% - 240px);
+    margin: 0;
+  }
+}
+
+.rounded {
+  border-radius: 0.25rem !important;
+}
+
+.random-bird .bird-image {
+  width: 200px;
+  height: 155px;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.random-bird .list-group {
+  margin-left: 40px;
+}
+
+.list-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.list-group-flush .list-group-item:first-child {
+  border-top-width: 0;
+}
+
+.random-bird .list-group-item {
+  padding: .25rem;
+}
+
+.list-group-flush .list-group-item {
+  border-right-width: 0;
+  border-left-width: 0;
+  border-radius: 0;
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: #303030;
+  border: 1px solid #444;
+}
+
+.audio-player {
+  margin: 10px 40px 8px 0;
+  width: 100%;
+  min-width: 100px;
+}
+
+.timebar {
+  flex: 1 1;
+  margin-top: 12px;
+}
+
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1140px;
@@ -292,3 +377,37 @@ button:not(:disabled),
     padding: 4rem 2rem;
   }
 }
+
+@media (max-width: 570px) {
+  .random-bird {
+    flex-direction: column;
+    div {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .random-bird .list-group {
+    margin-left: 0;
+  }
+
+  .random-bird .bird-image {
+    margin: 0 auto 25px;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .random-bird .bird-image {
+    margin: 0 auto 25px;
+}
+}
+
+@media (max-width: 767px) {
+  h1.display-3 {
+    font-size: 3rem;
+  }
+}
+
+

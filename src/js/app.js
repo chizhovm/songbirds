@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/header';
 import GameOver from './components/game-over';
 import levels from '../data/data';
+import RandomBird from './components/random-bird';
 import '../css/index.scss';
 
 export default class App extends Component {
@@ -77,6 +78,7 @@ export default class App extends Component {
           levels={levels}
           levelsHandler={this.levelsHandler}
         />
+        <RandomBird />
       </>
     );
   }
