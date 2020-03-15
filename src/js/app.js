@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AnswerSection from './components/answer-section';
 import Header from './components/header';
 import GameOver from './components/game-over';
 import levels from '../data/data';
@@ -79,6 +80,7 @@ export default class App extends Component {
           levelsHandler={this.levelsHandler}
         />
         <RandomBird />
+        <AnswerSection />
       </>
     );
   }
