@@ -1,10 +1,14 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 // import PropTypes from 'prop-types';
 
 // eslint-disable-next-line no-unused-vars
 const NextLevelButton = (props) => {
+  const { nextLevelHandler } = props;
   return (
-    <button className="btn btn-next" type="button">Next Level</button>
+    <button className="btn btn-next" type="button" onClick={nextLevelHandler}>
+      Next Level
+    </button>
   );
 };
 

@@ -13,6 +13,7 @@ export default class App extends Component {
     this.DEFAULT_LEVELS = levels;
     this.FINISH = 5;
     this.state = {
+      currentLevel: 0,
       gameOver: false,
       levels: this.DEFAULT_LEVELS,
       value: this.DEFAULT_VALUE,
@@ -20,6 +21,7 @@ export default class App extends Component {
     this.adder = 1;
     this.levelsHandler = this.levelsHandler.bind(this);
     this.newGameHandler = this.newGameHandler.bind(this);
+    this.nextLevelHandler = this.nextLevelHandler.bind(this);
   }
 
   levelsHandler(name) {
@@ -47,16 +49,28 @@ export default class App extends Component {
       if (index === this.DEFAULT_VALUE) level.marked = true;
       return level;
     });
-    const value = this.DEFAULT_VALUE;
+    const value = 0;
     const gameOver = false;
-    this.setState({ gameOver, levels, value });
+    const currentLevel = 0;
+    this.setState({
+      currentLevel, gameOver, levels, value,
+    });
+  }
+
+  nextLevelHandler() {
+    let { currentLevel, gameOver } = this.state;
+    if (currentLevel === this.FINISH) {
+      gameOver = true;
+      currentLevel = this.DEFAULT_VALUE;
+    } else currentLevel += this.adder;
+    this.setState({ currentLevel, gameOver });
   }
 
   render() {
     const { value } = this.state;
     const { levels } = this.state;
     const { gameOver } = this.state;
-
+    const { currentLevel } = this.state;
     if (gameOver) {
       return (
         <>
@@ -80,7 +94,10 @@ export default class App extends Component {
           levelsHandler={this.levelsHandler}
         />
         <RandomBird />
-        <AnswerSection />
+        <AnswerSection
+          level={levels[currentLevel]}
+          nextLevelHandler={this.nextLevelHandler}
+        />
       </>
     );
   }
