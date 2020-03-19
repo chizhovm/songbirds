@@ -7,6 +7,7 @@ import RandomBird from './components/random-bird';
 import '../css/index.scss';
 
 export default class App extends Component {
+  // eslint-disable-next-line max-statements
   constructor() {
     super();
     this.DEFAULT_VALUE = 0;
@@ -19,9 +20,28 @@ export default class App extends Component {
       value: this.DEFAULT_VALUE,
     };
     this.adder = 1;
+    this.birdHandler = this.birdHandler.bind(this);
+    // this.getRandomBird = this.getRandomBird.bind(this);
     this.levelsHandler = this.levelsHandler.bind(this);
     this.newGameHandler = this.newGameHandler.bind(this);
     this.nextLevelHandler = this.nextLevelHandler.bind(this);
+    console.log(this.getRandomBird());
+  }
+
+  getRandomBird() {
+    this.randomBird = Math.floor(Math.random() * (this.FINISH + this.adder));
+  }
+
+  birdHandler(level, element, index) {
+    // eslint-disable-next-line max-len
+    // console.log('randomBird=', this.randomBird, 'level=', level, 'element=', element, 'index=', index);
+    console.log(this.randomBird);
+    const { levels } = this.state;
+    const idx = levels.indexOf(level);
+    // console.log('level index = ', idx, levels[idx].data[index].birdClasses);
+    if (this.randomBird === index) levels[idx].data[index].birdClasses.push('success');
+    else levels[idx].data[index].birdClasses.push('error');
+    this.setState({ levels });
   }
 
   levelsHandler(name) {
@@ -36,6 +56,7 @@ export default class App extends Component {
     });
     if (value === this.FINISH) {
       const gameOver = true;
+      const levels = this.DEFAULT_LEVELS;
       this.setState({ gameOver, levels, value });
     }
     this.setState({ levels, value });
@@ -58,6 +79,7 @@ export default class App extends Component {
   }
 
   nextLevelHandler() {
+    this.getRandomBird();
     let { currentLevel, gameOver } = this.state;
     if (currentLevel === this.FINISH) {
       gameOver = true;
@@ -67,10 +89,13 @@ export default class App extends Component {
   }
 
   render() {
+
     const { value } = this.state;
     const { levels } = this.state;
     const { gameOver } = this.state;
     const { currentLevel } = this.state;
+    const { birdClasses } = this.state;
+
     if (gameOver) {
       return (
         <>
@@ -95,8 +120,10 @@ export default class App extends Component {
         />
         <RandomBird />
         <AnswerSection
+          birdClasses={birdClasses}
           level={levels[currentLevel]}
           nextLevelHandler={this.nextLevelHandler}
+          birdHandler={this.birdHandler}
         />
       </>
     );

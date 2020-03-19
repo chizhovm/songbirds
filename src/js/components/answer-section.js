@@ -5,13 +5,15 @@ import BirdInfo from './bird-info';
 import NextLevelButton from './next-level-button';
 // import PropTypes from 'prop-types';
 
-// eslint-disable-next-line no-unused-vars
 const AnswerSection = (props) => {
-  const { level, nextLevelHandler } = props;
+  const {
+ birdHandler, birdClasses, level, nextLevelHandler,
+} = props;
   return (
-    // eslint-disable-next-line react/self-closing-comp
     <div className="row mb2">
       <Answer
+        birdHandler={birdHandler}
+        birdClasses={birdClasses}
         level={level}
       />
       <BirdInfo />

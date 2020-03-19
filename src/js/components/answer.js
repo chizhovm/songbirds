@@ -1,18 +1,21 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react/prop-types */
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-// eslint-disable-next-line no-unused-vars
 const Answer = (props) => {
-  const { level } = props;
-  const item = level.data.map((element) => {
+
+  const { birdHandler, level } = props;
+  const item = level.data.map((element, index) => {
   return (
-    <li className="list-group-item" key={element.bird}>
+    <li className={element.birdClasses.join(' ')} key={element.bird} onClick={() => birdHandler(level, element, index)}>
       <span className="li-btn" />
       {element.bird}
     </li>
   );
   });
+
   return (
     <div className="col-md-6">
       <ul className="item-list list-group">
