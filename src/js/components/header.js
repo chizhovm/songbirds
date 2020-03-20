@@ -4,7 +4,7 @@ import PageItem from './page-item';
 
 const Header = (props) => {
 
-  const { value, levels, levelsHandler } = props;
+  const { value, levels } = props;
 
   return (
     <div className="header d-flex">
@@ -22,7 +22,6 @@ const Header = (props) => {
             <PageItem
               level={level}
               key={level.name}
-              levelsHandler={() => levelsHandler(level.name)}
             />
             );
           })}
@@ -33,7 +32,6 @@ const Header = (props) => {
 
 Header.propTypes = {
   levels: PropTypes.arrayOf(PropTypes.object).isRequired,
-  levelsHandler: PropTypes.func.isRequired,
   value: PropTypes.number,
 };
 

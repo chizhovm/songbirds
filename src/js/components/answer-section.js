@@ -7,7 +7,7 @@ import NextLevelButton from './next-level-button';
 
 const AnswerSection = (props) => {
   const {
- birdHandler, birdClasses, level, nextLevelHandler,
+ birdHandler, birdClasses, btnNextClasses, level, nextLevelHandler,
 } = props;
   return (
     <div className="row mb2">
@@ -18,6 +18,7 @@ const AnswerSection = (props) => {
       />
       <BirdInfo />
       <NextLevelButton
+        btnNextClasses={btnNextClasses}
         nextLevelHandler={nextLevelHandler}
       />
     </div>
