@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-const levels = [
+const DEFAULT_LEVELS = [
   {
     count: 5,
     data:
@@ -338,4 +338,4 @@ const levels = [
   },
 ];
 
-export default levels;
+export default DEFAULT_LEVELS;
