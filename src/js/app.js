@@ -71,12 +71,12 @@ export default class App extends Component {
       let {
         btnNextClasses, currentLevel, gameOver, levels, value,
       } = this.state;
+      value += levels[currentLevel].count;
       if (currentLevel === this.FINISH) {
         gameOver = true;
         currentLevel = this.DEFAULT_VALUE;
         levels = this.DEFAULT_LEVELS;
       } else {
-        value += levels[currentLevel].count;
         currentLevel += this.adder;
       }
       btnNextClasses = [this.DEFAULT_btnNextClasses];
