@@ -314,7 +314,7 @@ const DEFAULT_LEVELS = [
         description: 'Пеликаны — обитатели морей и рек. Ходят они неуклюже, но хорошо летают и плавают. Питаются в основном рыбой, устраивают коллективные охоты — выстроившись полукругом хлопают по воде крыльями и клювами и вытесняют напуганную рыбу на мелководье.',
         latin: 'Pelecanus',
         picture: 'https://live.staticflickr.com/65535/48916866918_e8881e4769_n.jpg',
-        sound: '<audio src="https://www.xeno-canto.org/sounds/uploaded/XAMHIHFTZG/XC331138-call1.mp3" hidden=""></audio>',
+        sound: '<audio src="https://www.xeno-canto.org/sounds/uploaded/XAMHIHFTZG/XC331138-call1.mp3"></audio>',
       },
       {
         bird: 'Пингвин',

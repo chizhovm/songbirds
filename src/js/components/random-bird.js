@@ -1,19 +1,30 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
+import DefaultBird from '../../images/random_bird.jpg';
 // import PropTypes from 'prop-types';
 
-const RandomBird = () => {
+const RandomBird = (props) => {
+  const {
+    currentLevel, levels, levelFinished, randomBird,
+  } = props;
+  const { data } = levels[currentLevel];
+  const { sound } = data[randomBird];
+
+  const bird = levelFinished ? data[randomBird].bird : '******';
+  const picture = levelFinished ? data[randomBird].picture : DefaultBird;
+
   return (
     <div className="random-bird jumbotron rounded">
-      <img className="bird-image" src="https://live.staticflickr.com//65535//49366042493_c48c81d58d.jpg" alt="Синица" />
+      <img className="bird-image" src={picture} alt={bird} />
       <div>
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
-            <h3>Синица</h3>
+            <h3>{bird}</h3>
           </li>
           <li className="list-group-item">
             <div className="audio-player ">
-              <audio src="https://www.xeno-canto.org/sounds/uploaded/RFGQDPLDEC/XC518417-Kj%C3%B8ttmeis%20XC%20Helg%C3%B8ya%20Elias%20A.%20Ryberg20200108133922_079.mp3" controls />
+              <audio src={sound} controls />
             </div>
           </li>
         </ul>
