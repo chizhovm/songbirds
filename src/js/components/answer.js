@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react/prop-types */
 import React from 'react';
 // import PropTypes from 'prop-types';
@@ -9,9 +7,11 @@ const Answer = (props) => {
   const { birdHandler, level } = props;
   const item = level.data.map((element, index) => {
   return (
-    <li className={element.birdClasses.join(' ')} key={element.bird} onClick={() => birdHandler(level, element, index)}>
-      <span className="li-btn" />
-      {element.bird}
+    <li key={element.bird}>
+      <button className={element.birdClassList.join(' ')} onClick={() => birdHandler(level, index)} type="button">
+        <span className="li-btn" />
+        {element.bird}
+      </button>
     </li>
   );
   });

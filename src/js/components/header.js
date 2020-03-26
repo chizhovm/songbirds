@@ -4,7 +4,7 @@ import PageItem from './page-item';
 
 const Header = (props) => {
 
-  const { value, levels } = props;
+  const { score, levels } = props;
 
   return (
     <div className="header d-flex">
@@ -13,7 +13,7 @@ const Header = (props) => {
         <h5>
           Score:
           {' '}
-          <span className="score">{value}</span>
+          <span className="score">{score}</span>
         </h5>
       </div>
       <ul className="pagination">
@@ -32,11 +32,11 @@ const Header = (props) => {
 
 Header.propTypes = {
   levels: PropTypes.arrayOf(PropTypes.object).isRequired,
-  value: PropTypes.number,
+  score: PropTypes.number,
 };
 
 Header.defaultProps = {
-  value: 0,
+  score: 0,
 };
 
 export default Header;

@@ -3,10 +3,10 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 const NextLevelButton = (props) => {
-  const { btnNextClasses } = props;
+  const { btnNextClassList } = props;
   const { nextLevelHandler } = props;
   return (
-    <button className={btnNextClasses.join(' ')} type="button" onClick={nextLevelHandler}>
+    <button className={btnNextClassList.join(' ')} type="button" onClick={nextLevelHandler}>
       Next Level
     </button>
   );

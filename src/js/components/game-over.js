@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const GameOver = (props) => {
-  const { value, newGameHandler } = props;
+  const { score, newGameHandler } = props;
    return (
      <div className="jumbotron game-over">
        <h1 className="display-3 text-center">
@@ -11,7 +11,7 @@ const GameOver = (props) => {
        <p className="lead text-center">
          Вы прошли викторину и набрали
          {' '}
-         { value }
+         { score }
          {' '}
          из 30 возможных баллов
        </p>
@@ -25,12 +25,12 @@ const GameOver = (props) => {
 
 GameOver.propTypes = {
   newGameHandler: PropTypes.func,
-  value: PropTypes.number,
+  score: PropTypes.number,
 };
 
 GameOver.defaultProps = {
   newGameHandler: null,
-  value: 0,
+  score: 0,
 };
 
 export default GameOver;

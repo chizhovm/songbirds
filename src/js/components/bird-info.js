@@ -1,6 +1,5 @@
-/* eslint-disable max-lines-per-function */
-/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/media-has-caption */
+/* eslint-disable react/prop-types */
 import React from 'react';
 // import PropTypes from 'prop-types';
 

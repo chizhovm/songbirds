@@ -84,6 +84,7 @@ p {
 ol, ul, dl {
   margin-top: 0;
   margin-bottom: 1rem;
+  list-style-type: none;
 }
 
 a {
@@ -442,7 +443,7 @@ button:not(:disabled),
   cursor: pointer;
 }
 
-.list-group-item:hover, .li-btn {
+.list-group-item:hover, .bird-item:hover, .li-btn {
   background-color: #444;
 }
 
@@ -473,6 +474,16 @@ button:not(:disabled),
   padding: 1rem;
   border: 1px solid #444;
   width: 100%;
+}
+
+.bird-item {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  background-color: #303030;
+  border: 1px solid #444;
 }
 
 .card {
