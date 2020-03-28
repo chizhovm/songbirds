@@ -130,13 +130,13 @@ export default class App extends Component {
         <Header
           score={score}
           levels={levels}
-          levelsHandler={this.levelsHandler}
         />
         <RandomBird
           currentLevel={currentLevel}
           levels={levels}
           levelFinished={levelFinished}
           randomBird={randomBird}
+          // state={state}
         />
         <AnswerSection
           birdClassList={birdClassList}

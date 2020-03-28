@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Answer from './answer';
 import BirdInfo from './bird-info';
 import NextLevelButton from './next-level-button';
-// import PropTypes from 'prop-types';
 
 const AnswerSection = (props) => {
   const {
@@ -25,6 +25,19 @@ const AnswerSection = (props) => {
       />
     </div>
   );
+};
+
+AnswerSection.propTypes = {
+  birdClassList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  birdHandler: PropTypes.func.isRequired,
+  btnNextClassList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  clickedBird: PropTypes.objectOf(PropTypes.string),
+  level: PropTypes.number.isRequired,
+  nextLevelHandler: PropTypes.func.isRequired,
+};
+
+AnswerSection.defaultProps = {
+  clickedBird: null,
 };
 
 export default AnswerSection;
