@@ -58,7 +58,7 @@ export default class App extends Component {
       btnNextClassList.push('btn-next');
       levelFinished = true;
     } else {
-      if (!levelFinished && (clickedBird.birdClassList.join(' ') === 'list-group-item')) {
+      if (!levelFinished && (clickedBird.birdClassList.join(' ') === 'bird-item')) {
         levels[idx].score -= ADDER;
       }
       clickedBird.birdClassList.push('error');
@@ -136,7 +136,6 @@ export default class App extends Component {
           levels={levels}
           levelFinished={levelFinished}
           randomBird={randomBird}
-          // state={state}
         />
         <AnswerSection
           birdClassList={birdClassList}
