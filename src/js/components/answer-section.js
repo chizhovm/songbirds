@@ -9,7 +9,7 @@ const AnswerSection = (props) => {
  birdHandler, btnNextClassList, clickedBird, level, nextLevelHandler,
 } = props;
   return (
-    <div className="row mb2">
+    <div className="row">
       <Answer
         birdHandler={birdHandler}
         level={level}

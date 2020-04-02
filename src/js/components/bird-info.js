@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-/* eslint-disable react/prop-types */
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const BirdInfo = (props) => {
   const { clickedBird } = props;
@@ -22,15 +21,15 @@ const BirdInfo = (props) => {
             src={clickedBird.picture}
             alt={clickedBird.bird}
           />
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
+          <ul className="list-group">
+            <li>
               <h4>{clickedBird.bird}</h4>
             </li>
-            <li className="list-group-item">
+            <li>
               <span>{clickedBird.latin}</span>
             </li>
-            <li className="list-group-item">
-              <div className="audio-player">
+            <li>
+              <div className="bird-info-audio-player">
                 <audio src={clickedBird.sound} controls />
               </div>
             </li>
@@ -45,11 +44,26 @@ const BirdInfo = (props) => {
 
   return (
     <div className="col-md-6">
-      <div className="bird-details card">
+      <div className="bird-details">
         <BirdDescription />
       </div>
     </div>
   );
+};
+
+BirdInfo.propTypes = {
+  clickedBird: PropTypes.shape({
+    bird: PropTypes.string,
+    birdClasslist: PropTypes.arrayOf(PropTypes.string),
+    description: PropTypes.string,
+    latin: PropTypes.string,
+    picture: PropTypes.string,
+    sound: PropTypes.string,
+  }),
+};
+
+BirdInfo.defaultProps = {
+  clickedBird: null,
 };
 
 export default BirdInfo;

@@ -31,7 +31,21 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  levels: PropTypes.arrayOf(PropTypes.object).isRequired,
+  levels: PropTypes.arrayOf(PropTypes.shape({
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        bird: PropTypes.string,
+        birdClasslist: PropTypes.arrayOf(PropTypes.string),
+        description: PropTypes.string,
+        latin: PropTypes.string,
+        picture: PropTypes.string,
+        sound: PropTypes.string,
+      }),
+    ),
+    marked: PropTypes.bool,
+    name: PropTypes.string,
+    score: PropTypes.number,
+  })).isRequired,
   score: PropTypes.number,
 };
 

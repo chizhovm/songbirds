@@ -3,20 +3,32 @@ import PropTypes from 'prop-types';
 
 const PageItem = (props) => {
   const { level } = props;
-  const classes = ['page-item'];
-  if (level.marked) classes.push('active');
+  const classList = ['page-item'];
+  if (level.marked) classList.push('active');
   return (
-    <li className={classes.join(' ')}>
-      <a className="page-link" href="/#">
-        {level.name}
-        {' '}
-      </a>
+    <li className={classList.join(' ')}>
+      {level.name}
+      {' '}
     </li>
   );
 };
 
 PageItem.propTypes = {
-  level: PropTypes.instanceOf(Object),
+  level: PropTypes.shape({
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        bird: PropTypes.string,
+        birdClasslist: PropTypes.arrayOf(PropTypes.string),
+        description: PropTypes.string,
+        latin: PropTypes.string,
+        picture: PropTypes.string,
+        sound: PropTypes.string,
+      }),
+    ),
+    marked: PropTypes.bool,
+    name: PropTypes.string,
+    score: PropTypes.number,
+  }),
 };
 
 PageItem.defaultProps = {

@@ -15,15 +15,15 @@ const RandomBird = (props) => {
   const picture = levelFinished ? data[randomBird].picture : DefaultBird;
 
   return (
-    <div className="random-bird jumbotron rounded">
+    <div className="random-bird">
       <img className="bird-image" src={picture} alt={bird || RandomBird.defaultProps.randomBird} />
       <div>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item">
+        <ul className="list-group">
+          <li>
             <h3>{bird || RandomBird.defaultProps.randomBird}</h3>
           </li>
-          <li className="list-group-item">
-            <div className="audio-player ">
+          <li>
+            <div className="audio">
               <audio src={sound} controls />
             </div>
           </li>

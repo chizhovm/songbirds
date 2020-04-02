@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const GameOver = (props) => {
   const { score, newGameHandler } = props;
    return (
-     <div className="jumbotron game-over">
+     <div className="jumbotron">
        <h1 className="display-3 text-center">
          Поздравляем!
        </h1>

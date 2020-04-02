@@ -15,7 +15,7 @@ const ADDER = 1;
 const BIRD_COUNT = 6;
 const DEFAULT_SCORE = 0;
 const DEFAULT_BTN_NEXT_CLASSLIST = 'btn';
-const DEFAULT_BIRD_CLASSLIST = 'bird-item';
+const DEFAULT_BIRD_CLASSLIST = 'list-group-item bird-item';
 const START_LEVEL = 0;
 const FINISH_LEVEL = 5;
 const LEVEL_SCORE = 5;
@@ -58,7 +58,7 @@ export default class App extends Component {
       btnNextClassList.push('btn-next');
       levelFinished = true;
     } else {
-      if (!levelFinished && (clickedBird.birdClassList.join(' ') === 'bird-item')) {
+      if (!levelFinished && (clickedBird.birdClassList.join(' ') === DEFAULT_BIRD_CLASSLIST)) {
         levels[idx].score -= ADDER;
       }
       clickedBird.birdClassList.push('error');

@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const NextLevelButton = (props) => {
   const { btnNextClassList } = props;
@@ -10,6 +9,11 @@ const NextLevelButton = (props) => {
       Next Level
     </button>
   );
+};
+
+NextLevelButton.propTypes = {
+  btnNextClassList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  nextLevelHandler: PropTypes.func.isRequired,
 };
 
 export default NextLevelButton;
