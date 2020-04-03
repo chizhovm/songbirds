@@ -109,8 +109,6 @@ export default class App extends Component {
       gameOver, levels, levelFinished, randomBird, score,
     } = this.state;
 
-    console.log(randomBird);
-
     if (gameOver) {
       return (
         <>
