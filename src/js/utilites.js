@@ -11,7 +11,7 @@ const setBirdClassList = (level, birdClassList) => {
   return level;
 };
 
-const setLevelsMarker = (level, index) => {
+const setFirstLevelMarker = (level, index) => {
   level.marked = false;
   if (!index) level.marked = true;
   return level;
@@ -20,5 +20,5 @@ const setLevelsMarker = (level, index) => {
 const getRandomBird = (birdCount) => Math.floor(Math.random() * birdCount);
 
 export {
- setLevelScore, setBirdClassList, setLevelsMarker, getRandomBird,
+ setLevelScore, setBirdClassList, setFirstLevelMarker, getRandomBird,
 };

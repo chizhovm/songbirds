@@ -7,7 +7,7 @@ import GameOver from './components/game-over';
 import RandomBird from './components/random-bird';
 import DEFAULT_LEVELS from './data/data';
 import {
-  setLevelScore, setBirdClassList, setLevelsMarker, getRandomBird,
+  setLevelScore, setBirdClassList, setFirstLevelMarker, getRandomBird,
 } from './utilites';
 import '../css/index.scss';
 
@@ -22,7 +22,7 @@ const LEVEL_SCORE = 5;
 
 DEFAULT_LEVELS.map((level, index) => {
   setLevelScore(level, LEVEL_SCORE);
-  setLevelsMarker(level, index);
+  setFirstLevelMarker(level, index);
   setBirdClassList(level, DEFAULT_BIRD_CLASSLIST);
   return level;
 });
@@ -49,22 +49,21 @@ export default class App extends Component {
 
   // eslint-disable-next-line max-statements
   birdHandler(level, index) {
-    const { btnNextClassList, levels, randomBird } = this.state;
+    const { btnNextClassList, randomBird } = this.state;
     let { clickedBird, levelFinished } = this.state;
-    const idx = levels.indexOf(level);
-    clickedBird = levels[idx].data[index];
+    clickedBird = level.data[index];
     if (randomBird === index) {
       clickedBird.birdClassList.push('success');
       btnNextClassList.push('btn-next');
       levelFinished = true;
     } else {
       if (!levelFinished && (clickedBird.birdClassList.join(' ') === DEFAULT_BIRD_CLASSLIST)) {
-        levels[idx].score -= ADDER;
+        level.score -= ADDER;
       }
       clickedBird.birdClassList.push('error');
     }
     this.setState({
-      btnNextClassList, clickedBird, levelFinished, levels,
+      btnNextClassList, clickedBird, levelFinished,
     });
   }
 
